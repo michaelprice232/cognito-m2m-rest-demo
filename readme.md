@@ -35,9 +35,6 @@ To verify the app, protects against JWT tampering (the payload has changed):
 2. Pass the token to the [tamper-jwt-token](./tamper-jwt-token) app. This will extend the expiry time (exp claim) of the token and invalidate the signature
 3. Call the rest-server-m2m REST server with the tampered token as an auth header. You should get an HTTP 401 response due to an invalid signature
 
-To confirm that the tampered token works without the signature verification step, you can update the codebase to use `ParseUnverified` instead of `Parse`.
-You should get an HTTP 200 response from the private endpoint:
-
 ## Todo
 
 - Extend the HTTP client to also call the REST endpoints

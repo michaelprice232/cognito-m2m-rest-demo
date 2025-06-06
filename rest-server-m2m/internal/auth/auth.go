@@ -17,7 +17,7 @@ import (
 	"github.com/valkey-io/valkey-go"
 )
 
-const cacheExpirySeconds = 120
+const cacheExpirySeconds = 86400 // 24 hours
 
 func NewAuth(valkeyClient valkey.Client, scope, issuer string) *Auth {
 	return &Auth{
